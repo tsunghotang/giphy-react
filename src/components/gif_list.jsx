@@ -2,8 +2,15 @@ import React, { Component } from 'react';
 import Gif from './gif';
 
 class GifList extends Component {
+  shouldComponentUpdate(nextProps) {
+    const { gifs } = this.props;
+    if (nextProps.gifs.length === 0) return true;
+    return !nextProps.gifs.every(element => gifs.includes(element));
+  }
+
   renderList = () => {
-    return this.props.gifs.map(gif => <Gif id={gif.id} key={gif.id} selectGif={this.props.selectGif} />);
+    const { gifs, selectGif } = this.props;
+    return gifs.map(gif => <Gif id={gif.id} key={gif.id} selectGif={selectGif} />);
   }
 
   render() {
@@ -13,17 +20,6 @@ class GifList extends Component {
       </div>
     );
   }
-
-  // render() {
-  //   return (
-  //     <div className="gif-list">
-  //       {this.props.gifs.map(gif => {
-  //         return <Gif id={gif.id} />
-  //       })}
-  //     </div>
-  //   );
-
-  // }
 }
 
 export default GifList;
