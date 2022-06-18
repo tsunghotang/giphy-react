@@ -1,22 +1,16 @@
-import React, { Component } from 'react';
+import React, { useCallback } from 'react';
 import debounce from 'lodash.debounce';
 
-class SearchBar extends Component {
-  debounce = debounce(event => this.props.searchFunction(event.target.value), 1000);
+const SearchBar = ({ searchGiphy }) => {
+  const debounceSearch = useCallback(debounce(query => searchGiphy(query), 1000), []);
 
-  shouldComponentUpdate() {
-    return false;
-  }
+  const handleUpdate = (event) => {
+    debounceSearch(event.target.value);
+  };
 
-  handleUpdate = (event) => {
-    this.debounce(event);
-  }
-
-  render() {
-    return (
-      <input type="input" className="form-search form-control" onChange={this.handleUpdate} placeholder="Search for a Gif" />
-    );
-  }
-}
+  return (
+    <input type="input" className="form-search form-control" onChange={handleUpdate} placeholder="Search for a Gif" />
+  );
+};
 
 export default SearchBar;

@@ -1,26 +1,15 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class Gif extends Component {
-  shouldComponentUpdate(nextProps) {
-    const { id } = this.props;
-    return id !== nextProps.id;
-  }
+const Gif = ({ gifID, setSelectedGif }) => {
+  const handleClick = () => {
+    if (setSelectedGif) setSelectedGif(gifID);
+  };
 
-  handleClick = () => {
-    const { selectGif, id } = this.props;
+  const src = `https://media.giphy.com/media/${gifID}/giphy.gif`;
 
-    if (selectGif) {
-      selectGif(id);
-    }
-  }
+  return (
+    <img src={src} alt="" className="gif" onClick={handleClick} />
+  );
+};
 
-  render() {
-    const src = `https://media.giphy.com/media/${this.props.id}/giphy.gif`;
-    // `https://media3.giphy.com/media/${this.props.id}/giphy.gif`;
-    return (
-      <img src={src} alt="" className="gif" onClick={this.handleClick} />
-    );
-  }
-}
-
-export default Gif;
+export default React.memo(Gif);
