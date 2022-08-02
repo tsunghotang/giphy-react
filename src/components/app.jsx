@@ -8,6 +8,9 @@ import Gif from './gif';
 import defaultGifs from '../data/defaultGifs';
 import defaultSelectedGif from '../data/defaultSelectedGif';
 
+const GIPHY_API_KEY = '1KMPHCBIOe3hOjJwCJQX49sRc6cM0oIm';
+
+
 const App = () => {
   const [selectedGif, setSelectedGif] = useState(defaultSelectedGif);
   const [gifList, setGifList] = useState(defaultGifs);
@@ -26,7 +29,7 @@ const App = () => {
   // };
 
     const searchGiphy = (query) => {
-    const giphEndpoint = `https://api.giphy.com/v1/gifs/search?api_key=${'n7LToNAYy3EFNdNoROWRE7AHCRhqske7'}&q=${query}&limit=10`
+    const giphEndpoint = `https://api.giphy.com/v1/gifs/search?api_key=${GIPHY_API_KEY}&q=${query}&limit=10`
     fetch(giphEndpoint).then(response => response.json()).then((data) => {
       const gifs = data.data.map(gif => ({ id: gif.id, title: gif.title }));
       setGifList(gifs)
