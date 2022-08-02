@@ -26,12 +26,10 @@ const App = () => {
   // };
 
     const searchGiphy = (query) => {
-    const giphEndpoint = `https://api.giphy.com/v1/gifs/search?api_key=${n7LToNAYy3EFNdNoROWRE7AHCRhqske7}&q=${query}&limit=10`
+    const giphEndpoint = `https://api.giphy.com/v1/gifs/search?api_key=${'n7LToNAYy3EFNdNoROWRE7AHCRhqske7'}&q=${query}&limit=10`
     fetch(giphEndpoint).then(response => response.json()).then((data) => {
-      this.setState({
-        gifs: data.data
-      })
-      console.log(this.state.gifs)
+      const gifs = data.data.map(gif => ({ id: gif.id, title: gif.title }));
+      setGifList(gifs)
     })
   }
 
