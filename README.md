@@ -1,5 +1,11 @@
-# react-boilerplate
 
+
+
+
+
+
+
+# react-boilerplate
 Simple react starter with the following config:
 
 - React, ReactDOM

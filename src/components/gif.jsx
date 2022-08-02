@@ -1,14 +1,15 @@
 import React from 'react';
 
-const Gif = ({ gifID, setSelectedGif }) => {
+const Gif = ({ gifID, gifTitle, setSelectedGif }) => {
   const handleClick = () => {
-    if (setSelectedGif) setSelectedGif(gifID);
+    if (setSelectedGif) setSelectedGif({ id: gifID, title: gifTitle });
+    // conditional ensure that the main gif does not execute setSelectedGif
   };
 
   const src = `https://media.giphy.com/media/${gifID}/giphy.gif`;
 
   return (
-    <img src={src} alt="" className="gif" onClick={handleClick} />
+    <img src={src} alt={gifTitle} className="gif" onClick={handleClick} />
   );
 };
 
