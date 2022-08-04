@@ -4,6 +4,7 @@ function Gif({ gifID, gifTitle, setSelectedGif }) {
   const handleClick = () => {
     if (setSelectedGif) setSelectedGif({ id: gifID, title: gifTitle });
     // conditional ensure that the main gif does not execute setSelectedGif
+    // Execute setSelectedGif if the gif clicked on has the function setSelectedGif
   };
 
   const src = `https://media.giphy.com/media/${gifID}/giphy.gif`;
@@ -13,4 +14,4 @@ function Gif({ gifID, gifTitle, setSelectedGif }) {
   );
 }
 
-export default React.memo(Gif);
+export default React.memo(Gif, (prevProps, nextProps) => prevProps.gifID === nextProps.gifID);

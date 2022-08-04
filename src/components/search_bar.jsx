@@ -13,4 +13,4 @@ function SearchBar({ searchGiphy }) {
   );
 }
 
-export default SearchBar;
+export default React.memo(SearchBar, () => true);
