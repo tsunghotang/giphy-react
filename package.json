@@ -37,5 +37,5 @@
     "lint": "eslint './src/**/*.js*'",
     "create-gh-pages": "git branch gh-pages -f && git push origin gh-pages -f && gh-pages -d dist && gh repo view -w",
     "deploy": "webpack && yarn create-gh-pages"
-   }
+  }
 }

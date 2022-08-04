@@ -1,22 +1,41 @@
+# Giphy-Search-React
+
+Simple React app that uses Giphy's API to search for and view GIFS.
+
+ This repo contains two branches which builds the same app differently.
+
+**Master** - Uses both functional and class components.
+
+**React-Hook-Giphy** - Uses functional components and React Hooks.
+
+---
+
+_DROP SCREENSHOT HERE_
+Screen Shows
 
 
+<br>
+App home: https://tsunghotang.github.io/giphy-react/
 
 
+---
+
+## Built With
+- [React](https://guides.rubyonrails.org/) - Front-end
+- [Giphy API](https://yarnpkg.com/package/giphy-api)
+- [Webpack](https://heroku.com/)
+- [Babel](https://www.postgresql.org/)
+- [gh-pages](https://yarnpkg.com/package/gh-pages) - Deployment
 
 
+---
+### Setup
+Install JS packages
+```
+yarn install
+```
 
-# react-boilerplate
-Simple react starter with the following config:
-
-- React, ReactDOM
-- Webpack 4
-- Babel with es2015 and react presets
-- Bootstrap (css only, loaded from a cdn in `index.html`)
-- work with `.js` or `.jsx` files
-- main `application.scss` stylesheet is imported in `index.js` as a module to enjoy hot reloading
-
-## Scripts
-
+### Scripts
 To start the local Webpack Dev Server (usually on port `8080`):
 
 ```bash
@@ -34,3 +53,6 @@ To build and deploy your app to `gh-pages` branch on the GitHub repo:
 ```bash
 yarn deploy
 ```
+---
+# Todo
+* Improve accessibility - styling for focusable elements.

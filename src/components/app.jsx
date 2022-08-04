@@ -10,31 +10,17 @@ import defaultSelectedGif from '../data/defaultSelectedGif';
 
 const GIPHY_API_KEY = '1KMPHCBIOe3hOjJwCJQX49sRc6cM0oIm';
 
-
-const App = () => {
+function App() {
   const [selectedGif, setSelectedGif] = useState(defaultSelectedGif);
   const [gifList, setGifList] = useState(defaultGifs);
 
-
-  // const searchGiphy = (query) => {
-  //   giphy('n7LToNAYy3EFNdNoROWRE7AHCRhqske7').search({
-  //     q: query,
-  //     rating: 'g',
-  //     limit: 10
-  //   }, (error, result) => {
-  //     const gifs = result.data.map(gif => ({ id: gif.id, title: gif.title }));
-
-  //     setGifList(gifs);
-  //   });
-  // };
-
-    const searchGiphy = (query) => {
-    const giphEndpoint = `https://api.giphy.com/v1/gifs/search?api_key=${GIPHY_API_KEY}&q=${query}&limit=10`
-    fetch(giphEndpoint).then(response => response.json()).then((data) => {
-      const gifs = data.data.map(gif => ({ id: gif.id, title: gif.title }));
-      setGifList(gifs)
-    })
-  }
+  const searchGiphy = (query) => {
+    const giphEndpoint = `https://api.giphy.com/v1/gifs/search?api_key=${GIPHY_API_KEY}&q=${query}&limit=10`;
+    fetch(giphEndpoint).then((response) => response.json()).then((data) => {
+      const gifs = data.data.map((gif) => ({ id: gif.id, title: gif.title }));
+      setGifList(gifs);
+    });
+  };
 
   return (
     <div>
@@ -51,6 +37,19 @@ const App = () => {
       </div>
     </div>
   );
-};
+}
 
 export default App;
+
+// Code for Giphy-API
+// const searchGiphy = (query) => {
+//   giphy('n7LToNAYy3EFNdNoROWRE7AHCRhqske7').search({
+//     q: query,
+//     rating: 'g',
+//     limit: 10
+//   }, (error, result) => {
+//     const gifs = result.data.map(gif => ({ id: gif.id, title: gif.title }));
+
+//     setGifList(gifs);
+//   });
+// };

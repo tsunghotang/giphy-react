@@ -1,9 +1,9 @@
 import React from 'react';
 import Gif from './gif';
 
-const GifList = ({ gifData, setSelectedGif }) => {
+function GifList({ gifData, setSelectedGif }) {
   const renderList = () => {
-    return gifData.map(gif => (
+    return gifData.map((gif) => (
       <Gif
         gifID={gif.id}
         gifTitle={gif.title}
@@ -18,6 +18,6 @@ const GifList = ({ gifData, setSelectedGif }) => {
       {renderList()}
     </div>
   );
-};
+}
 
 export default React.memo(GifList);
