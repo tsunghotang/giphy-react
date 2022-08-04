@@ -13,6 +13,8 @@ class SearchBar extends Component {
   }
 
   render() {
+    console.log('search bar')
+
     return (
       <input type="input" className="form-search form-control" onChange={this.handleUpdate} placeholder="Search for a Gif" />
     );
