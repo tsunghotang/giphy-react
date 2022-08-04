@@ -5,9 +5,10 @@ class GifList extends Component {
   shouldComponentUpdate(nextProps) {
     const { gifs } = this.props;
     if (nextProps.gifs.length === 0) return true;
-    return !nextProps.gifs.every((element) => gifs.includes(element));
-    // rewatch vid and understand this
-    // for every gif in the next element check if they are the same
+    return !nextProps.gifs.every((gif) => gifs.includes(gif));
+    // gif represnets an array of gifs
+    // for every gif in the next element check if they are the same as the gif in the old array
+    // if all true we want to return false so the componenet does not re-render
   }
 
   renderList = () => {
@@ -16,7 +17,7 @@ class GifList extends Component {
   };
 
   render() {
-    console.log('gif list')
+    console.log('gif list');
 
     return (
       <div className="gif-list">
