@@ -17,8 +17,6 @@ class GifList extends Component {
   };
 
   render() {
-    console.log('gif list');
-
     return (
       <div className="gif-list">
         {this.renderList()}

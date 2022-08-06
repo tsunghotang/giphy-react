@@ -32,12 +32,11 @@ class App extends Component {
   };
 
   search = (query) => {
-    const giphEndpoint = `https://api.giphy.com/v1/gifs/search?api_key=${GIPHY_API_KEY}&q=${query}&limit=10`
+    const giphEndpoint = `https://api.giphy.com/v1/gifs/search?api_key=${GIPHY_API_KEY}&q=${query}&limit=10`;
     fetch(giphEndpoint).then((response) => response.json()).then((data) => {
       this.setState({
         gifs: data.data
       });
-      console.log(this.state.gifs);
     });
   };
 
