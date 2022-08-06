@@ -10,11 +10,8 @@ Simple React app that uses Giphy's API to search for and view GIFS.
 
 ---
 
-_DROP SCREENSHOT HERE_
-Screen Shows
+![](Screenshot.png)
 
-
-<br>
 App home: https://tsunghotang.github.io/giphy-react/
 
 
@@ -23,8 +20,8 @@ App home: https://tsunghotang.github.io/giphy-react/
 ## Built With
 - [React](https://guides.rubyonrails.org/) - Front-end
 - [Giphy API](https://yarnpkg.com/package/giphy-api)
-- [Webpack](https://heroku.com/)
-- [Babel](https://www.postgresql.org/)
+- [Webpack](https://yarnpkg.com/package/webpack)
+- [Babel](https://yarnpkg.com/package/@babel/core)
 - [gh-pages](https://yarnpkg.com/package/gh-pages) - Deployment
 
 
@@ -56,3 +53,4 @@ yarn deploy
 ---
 # Todo
 * Improve accessibility - styling for focusable elements.
+* Load more results and introduce lazy loading or infinite scroll
