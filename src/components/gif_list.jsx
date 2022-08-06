@@ -13,7 +13,14 @@ class GifList extends Component {
 
   renderList = () => {
     const { gifs, selectGif } = this.props;
-    return gifs.map((gif) => <Gif id={gif.id} key={gif.id} selectGif={selectGif} />);
+    return gifs.map((gif) => (
+      <Gif
+        gifID={gif.id}
+        gifTitle={gif.title}
+        key={gif.id}
+        selectGif={selectGif}
+      />
+    ));
   };
 
   render() {

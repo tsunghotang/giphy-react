@@ -4,23 +4,23 @@ class Gif extends Component {
   shouldComponentUpdate(nextProps) {
     // default returns true.
     // if function returns false the componenet won't re-render
-    const { id } = this.props;
-    return id !== nextProps.id;
+    const { gifID } = this.props;
+    return gifID !== nextProps.gifID;
   }
 
   handleClick = () => {
-    const { selectGif, id } = this.props;
-
+    const { selectGif, gifID, gifTitle } = this.props;
     if (selectGif) {
-      selectGif(id);
+      selectGif({ id: gifID, title: gifTitle });
     }
   };
 
   render() {
-    const src = `https://media.giphy.com/media/${this.props.id}/giphy.gif`;
+    const { gifTitle, gifID } = this.props;
+    const src = `https://media.giphy.com/media/${gifID}/giphy.gif`;
 
     return (
-      <img src={src} alt="" className="gif" onClick={this.handleClick} />
+      <input type="image" src={src} alt={gifTitle} className="gif" onClick={this.handleClick} />
     );
   }
 }

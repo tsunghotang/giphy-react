@@ -4,6 +4,10 @@ import GifList from './gif_list';
 import Gif from './gif';
 // import giphy from 'giphy-api';
 
+// Data
+import defaultGifs from '../data/defaultGifs';
+import defaultSelectedGif from '../data/defaultSelectedGif';
+
 const GIPHY_API_KEY = 'n7LToNAYy3EFNdNoROWRE7AHCRhqske7';
 
 class App extends Component {
@@ -11,24 +15,13 @@ class App extends Component {
     super(props);
 
     this.state = {
-      selectedGifId: 'xT5LMHxhOfscxPfIfm',
-      gifs: [
-        { id: '4pMX5rJ4PYAEM' },
-        { id: 'oFRI4g517yWaI' },
-        { id: 'l0NwOkgTYRi30mT4Y' },
-        { id: '8Cz5czw3zuANO' },
-        { id: 'vdbrUjzrUEGly' },
-        { id: 'ASd0Ukj0y3qMM' },
-        { id: 'fDO2Nk0ImzvvW' },
-        { id: '8fen5LSZcHQ5O' },
-        { id: 'cO39srN2EUIRaVqaVq' },
-        { id: 'oWjyixDbWuAk8' }
-      ]
+      selectedGif: defaultSelectedGif,
+      gifs: defaultGifs
     };
   }
 
-  selectGif = (gifId) => {
-    this.setState({ selectedGifId: gifId });
+  selectGif = (selectedGif) => {
+    this.setState({ selectedGif: { id: selectedGif.id, title: selectedGif.title } });
   };
 
   search = (query) => {
@@ -41,13 +34,13 @@ class App extends Component {
   };
 
   render() {
-    const { gifs, selectedGifId } = this.state;
+    const { gifs, selectedGif } = this.state;
     return (
       <div>
         <div className="left-scene">
           <SearchBar searchFunction={this.search} />
           <div className="selected-gif">
-            <Gif id={selectedGifId} />
+            <Gif gifID={selectedGif.id} gifTitle={selectedGif.title} />
           </div>
         </div>
         <div className="right-scene">
