@@ -10,11 +10,8 @@ Simple React app that uses Giphy's API to search for and view GIFS.
 
 ---
 
-_DROP SCREENSHOT HERE_
-Screen Shows
+![](Screenshot.png)
 
-
-<br>
 App home: https://tsunghotang.github.io/giphy-react/
 
 
