@@ -15,7 +15,7 @@ function App() {
   const [gifList, setGifList] = useState(defaultGifs);
 
   const searchGiphy = (query) => {
-    const giphEndpoint = `https://api.giphy.com/v1/gifs/search?api_key=${GIPHY_API_KEY}&q=${query}&limit=50`;
+    const giphEndpoint = `https://api.giphy.com/v1/gifs/search?api_key=${GIPHY_API_KEY}&q=${query}&limit=20`;
     fetch(giphEndpoint).then((response) => response.json()).then((data) => {
       const gifs = data.data.map((gif) => ({ id: gif.id, title: gif.title }));
       setGifList(gifs);
