@@ -18,7 +18,7 @@ App home: https://tsunghotang.github.io/giphy-react/
 ---
 
 ## Built With
-- [React](https://guides.rubyonrails.org/) - Front-end
+- [React](https://reactjs.org/) - Front-end
 - [Giphy API](https://yarnpkg.com/package/giphy-api)
 - [Webpack](https://yarnpkg.com/package/webpack)
 - [Babel](https://yarnpkg.com/package/@babel/core)
