@@ -27,14 +27,14 @@ App home: https://tsunghotang.github.io/giphy-react/
 
 ---
 ### Setup
-Install JS packages
+1. Install JS packages
 ```
 yarn install
 ```
 
-Get a free API key from https://developers.giphy.com/
+2. Get a free API key from https://developers.giphy.com/
 
-Add the API key to the `GIPHY_API_KEY` variable located on line 11 in `src/app.jsx`
+3. Add the API key to the `GIPHY_API_KEY` variable located on line 11 in `src/app.jsx`
 
 
 ### Scripts
