@@ -8,7 +8,7 @@ import Gif from './gif';
 import defaultGifs from '../data/defaultGifs';
 import defaultSelectedGif from '../data/defaultSelectedGif';
 
-const GIPHY_API_KEY = '1KMPHCBIOe3hOjJwCJQX49sRc6cM0oIm';
+const GIPHY_API_KEY = '';
 
 function App() {
   const [selectedGif, setSelectedGif] = useState(defaultSelectedGif);
