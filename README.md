@@ -32,6 +32,11 @@ Install JS packages
 yarn install
 ```
 
+Get a free API key from https://developers.giphy.com/
+
+Add the API key to the `GIPHY_API_KEY` variable located on line 11 in `src/app.jsx`
+
+
 ### Scripts
 To start the local Webpack Dev Server (usually on port `8080`):
 

@@ -8,7 +8,7 @@ import Gif from './gif';
 import defaultGifs from '../data/defaultGifs';
 import defaultSelectedGif from '../data/defaultSelectedGif';
 
-const GIPHY_API_KEY = 'n7LToNAYy3EFNdNoROWRE7AHCRhqske7';
+const GIPHY_API_KEY = '';
 
 class App extends Component {
   constructor(props) {
